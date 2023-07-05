@@ -9,7 +9,7 @@ Flask
 Flask-Cors==4.0.0
 Flask-Migrate==4.0.4
 Flask-SQLAlchemy==3.0.5
-fsspec==2023.6.0
+fsspec
 fugashi==1.2.1
 greenlet==2.0.2
 huggingface-hub==0.16.2
