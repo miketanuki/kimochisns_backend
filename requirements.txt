@@ -50,3 +50,4 @@ typing_extensions==4.7.1
 urllib3==2.0.3
 Werkzeug>=2.2.2
 gunicorn==20.1.0
+psycopg2-binary
