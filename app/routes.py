@@ -15,7 +15,7 @@ def index():
 def post():
     if request.is_json:
         content = request.json['content']
-        sentiment_score = get_sentiment(content)
+        sentiment_score = get_sentiment()
         new_post = Post(content=content, sentiment_score=sentiment_score)
         db.session.add(new_post)
         db.session.commit()
