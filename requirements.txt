@@ -1,7 +1,7 @@
-Flask
-Flask-CORS
-Flask-SQLAlchemy
-Flask-Migrate
-SQLAlchemy
-guinicorn
+Flask==2.2.5
+Flask-Cors==4.0.0
+Flask-Migrate==4.0.4
+Flask-SQLAlchemy==3.0.5
+SQLAlchemy==2.0.17
+gunicorn==20.1.0
 psycopg2-binary
