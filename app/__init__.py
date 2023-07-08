@@ -11,12 +11,9 @@ db = SQLAlchemy()
 
 def create_app():
     app = Flask(__name__)
-    app.config['ENV'] = ''
     CORS(app)
-    if app.config['ENV'] == 'production':
-        app.config['SQLALCHEMY_DATABASE_URI'] = os.getenv('DATABASE_URL')
-    else:
-        app.config['SQLALCHEMY_DATABASE_URI'] = os.getenv('DATABASE_URL')
+    # app.config['SQLALCHEMY_DATABASE_URI'] = f"sqlite:///{os.path.join(basedir, 'app.db')}"
+    app.config['SQLALCHEMY_DATABASE_URI'] = os.getenv('DATABASE_URL')
     db.init_app(app)
     Migrate(app, db)
 
