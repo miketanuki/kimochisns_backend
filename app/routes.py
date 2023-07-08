@@ -1,7 +1,7 @@
 from flask import Blueprint, request, jsonify
 from . import db
 from .models import Post
-from .nlp import get_sentiment
+from .nlp import analyze_emotion
 from flask_cors import cross_origin
 
 bp = Blueprint('app', __name__)
@@ -15,7 +15,7 @@ def index():
 def post():
     if request.is_json:
         content = request.json['content']
-        sentiment_score = get_sentiment()
+        sentiment_score = analyze_emotion(content)
         new_post = Post(content=content, sentiment_score=sentiment_score)
         db.session.add(new_post)
         db.session.commit()
