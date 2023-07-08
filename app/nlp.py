@@ -1,11 +1,11 @@
 import os
-from dotenv import load_dotenv
+# from dotenv import load_dotenv
 import openai
 
 # APIキーの設定
-load_dotenv()
-openai.api_key = os.environ["OPENAI_API_KEY"]
-# openai.api_key = os.getenv('OPENAI_API_KEY')
+# load_dotenv()
+# openai.api_key = os.environ["OPENAI_API_KEY"]
+openai.api_key = os.getenv('OPENAI_API_KEY')
 
 def analyze_emotion(text):
 
