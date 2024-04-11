@@ -32,3 +32,14 @@ def get_posts():
         'content': post.content,
         'sentiment_score': post.sentiment_score
     } for post in posts])
+
+@bp.route('/api/posts/<int:post_id>', methods=['DELETE'])
+@cross_origin(origins="*", methods=["DELETE"])
+def delete_post(post_id):
+    post = Post.query.get(post_id)
+    if post:
+        db.session.delete(post)
+        db.session.commit()
+        return jsonify(message="Post deleted"), 200
+    else:
+        return jsonify(message="Post not found"), 404
